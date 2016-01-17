@@ -118,8 +118,8 @@ app.use(wrap(reactHandler));
 
 var port = process.env.PORT || 8000;
 
-app.listen(port);
-
-console.log("\nServer started on port " + port + "...\n");
+app.listen(port, function() {
+  console.log("\nServer started on port " + port + "...\n");
+});
 
 export default app;

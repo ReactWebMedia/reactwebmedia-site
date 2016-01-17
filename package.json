@@ -6,6 +6,7 @@
     "type": "git",
     "url": "git+https://github.com/ReactWebMedia/reactwebmedia-site.git"
   },
+  "main": "index.js",
   "scripts": {
     "tasks": "babel-node tasks.js",
     "test": "echo \"Preparing test database...\" && babel-node test-helpers/dropDatabase.js && knex --env test migrate:latest && DB_ENV=test mocha test",
