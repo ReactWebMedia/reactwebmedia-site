@@ -116,8 +116,10 @@ app.use('/api/v1', api);
 app.use(express.static('public', { index: false}));
 app.use(wrap(reactHandler));
 
-app.listen(8000);
+var port = process.env.PORT || 8000;
 
-console.log("\nServer started on port 8000...\n");
+app.listen(port);
+
+console.log("\nServer started on port " + port + "...\n");
 
 export default app;
