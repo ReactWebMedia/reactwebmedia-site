@@ -88,9 +88,7 @@
     "url-assembler": "^1.2.4",
     "uuid": "^2.0.1",
     "vinyl-source-stream": "",
-    "watchify": ""
-  },
-  "devDependencies": {
+    "watchify": "",
     "adm-zip": "^0.4.7",
     "babel-eslint": "^4.1.6",
     "browser-sync": "",
