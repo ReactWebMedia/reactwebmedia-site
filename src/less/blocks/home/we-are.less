@@ -1,0 +1,55 @@
+.we-are {
+	padding: 0;
+  .we-title {
+  	h2 {
+  		text-align: center;
+  		color: @gray-base;
+  	}
+  }
+
+	p {
+		text-align: center;
+		font-size: 18px;
+
+		&.we-sub-title{
+			color: @gray-base;
+		}
+
+		&.we-text{
+			color: @brand-gray;
+      font-size: 24px;
+      margin-top: 32px;
+		}
+	}
+}
+
+@media (min-width: 992px) {
+  .we-are {
+    padding: 90px 0;
+
+    .we-title {
+      height: 100%;
+      vertical-align: middle;
+      border-right: 30px #00d8ff solid;
+      margin-bottom: 52px;
+
+      h2 {
+        text-align: right;
+        color: @gray-base;
+        margin: 0;
+        font-size: 44px;
+      }
+    }
+
+    p {
+      &.we-sub-title{
+        text-align: left;
+        max-width: 440px;
+      }
+
+      &.we-text{
+        text-align: center;
+      }
+    }
+  }
+}

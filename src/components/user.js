@@ -1,0 +1,88 @@
+import React, { Component } from 'react';
+import { Link } from 'react-router';
+import Gravatar from 'react-gravatar';
+import moment from 'moment';
+
+import { URL_NAMES, getUrl } from '../utils/urlGenerator';
+
+export default class User extends Component {
+  render () {
+    var { user, hideAvatar, hideText, isRound, avatarSize, timestamp, timestampLink, className } = this.props;
+    var render = {};
+
+    render.cn = `user_box ${className}`;
+
+    let user_url = getUrl(URL_NAMES.USER, { username: user.username })
+
+    if (!hideAvatar) {
+      let avatarClassName = 'user_box__avatar';
+
+      if (isRound) {
+        avatarClassName += ' user_box__avatar-round';
+      }
+
+      render.avatar = (
+        <Link to={user_url} className={avatarClassName}>
+          <Gravatar md5={user.gravatarHash} size={parseInt(avatarSize, 10)} default="retro" />
+        </Link>
+      );
+    }
+
+    if (!hideText) {
+      let name = user.username;
+
+      if (user.more && user.more.firstName && user.more.lastName) {
+        name = `${user.more.firstName} ${user.more.lastName}`;
+      }
+
+      name = name.trim();
+
+      if (timestamp.length > 0 && timestampLink.length > 0) {
+        let timestamp_string = moment(timestamp).format('MMMM D, HH:MM');
+
+        render.timestamp =
+          <p className="user_box__text">
+            <Link to={timestampLink}>
+              {timestamp_string}
+            </Link>
+          </p>
+      }
+
+      render.text =
+        <div className="user_box__body">
+          <p className="user_box__name"><Link className="link" to={user_url}>{name}</Link></p>
+          {render.timestamp}
+        </div>;
+    }
+
+    return (
+        <div className={render.cn}>
+          {render.avatar}
+          {render.text}
+        </div>
+    )
+  }
+
+  static propTypes = {
+    user: React.PropTypes.shape({
+      id: React.PropTypes.string.isRequired,
+      username: React.PropTypes.string.isRequired,
+      avatar: React.PropTypes.string
+    }).isRequired,
+    avatarSize: React.PropTypes.any.isRequired,
+    hideAvatar: React.PropTypes.bool,
+    isRound: React.PropTypes.bool,
+    hideText: React.PropTypes.bool,
+    timestamp: React.PropTypes.string,
+    timestampLink: React.PropTypes.string
+  }
+
+  static defaultProps = {
+    hideAvatar: false,
+    hideText: false,
+    isRound: false,
+    avatarSize: 24,
+    timestamp: '',
+    timestampLink: ''
+  };
+}

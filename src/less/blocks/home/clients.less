@@ -1,0 +1,29 @@
+.parallax-clients {
+	background-color: @brand-primary;
+	background: url('/images/clients/background.jpg') top left no-repeat fixed;
+	background-size: cover;
+	padding: 135px 10px 150px 10px;
+
+	h2 {
+		text-align: center;
+		color: @brand-gray;
+    border-bottom: 1px @brand-gray solid;
+    padding-bottom: 10px;
+    margin: 22px auto 30px auto;
+    width: 50%;
+	}
+
+	.client-logo {
+		margin: auto;
+		max-width: 610px;
+		img {
+			width: 100%;
+		}
+	}
+}
+
+@media (min-width: 768px) {
+  .parallax-clients {
+    padding: 178px 10px 200px 10px;
+  }
+}
