@@ -256,8 +256,8 @@ class HomePage extends React.Component {
                 <button type="submit" className="btn btn-default">Get Sarted</button>
               </form>
             </div>
-            <div className="hidden-xs col-sm-3">
-              <table border="0" cellpadding="10" cellspacing="0" align="right">
+            <div className="hidden-xs col-sm-3 footer-paypal">
+              <table border="0" cellPadding="10" cellSpacing="0" align="right">
                 <tbody>
                   <tr>
                     <td align="center"></td>
