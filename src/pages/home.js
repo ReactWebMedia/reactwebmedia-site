@@ -257,9 +257,26 @@ class HomePage extends React.Component {
               </form>
             </div>
             <div className="hidden-xs col-sm-3">
-              <div className="footer-logo-holder">
-                <img src="/images/reactwebmedia-logo-icon.png" alt=""/>
-              </div>
+              <table border="0" cellpadding="10" cellspacing="0" align="right">
+                <tbody>
+                  <tr>
+                    <td align="center"></td>
+                  </tr>
+                  <tr>
+                    <td align="center">
+                      <a href="https://www.paypal.com/cr/webapps/mpp/what-is-paypal" title="How PayPal Works" onclick="javascript:window.open('https://www.paypal.com/cr/webapps/mpp/what-is-paypal','WIPaypal','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=1060, height=700'); return false;">
+                        <img src="https://www.paypalobjects.com/webstatic/mktg/logo/bdg_secured_by_pp_2line.png" border="0" alt="Secured by PayPal"/>
+                      </a>
+                      <div className="center">
+                        <br/>
+                        <a href="https://www.paypal.com/cr/webapps/mpp/what-is-paypal" face="Arial" color="#0079CD">
+                          How PayPal Works
+                        </a>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
             <div className="hidden-xs col-sm-2">
               &nbsp;
